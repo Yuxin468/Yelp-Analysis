@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import nltk
+nltk.download('stopwords')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from string import punctuation
 from nltk.corpus import stopwords
