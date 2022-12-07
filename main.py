@@ -33,7 +33,6 @@ div[data-testid="metric-container"] {
    color: rgb(30, 103, 119);
    overflow-wrap: break-word;
 }
-
 /* breakline for metric text         */
 div[data-testid="metric-container"] > label[data-testid="stMetricLabel"] > div {
    overflow-wrap: break-word;
@@ -77,7 +76,7 @@ count_rev = review_data['text'][review_data['name']==business_select].count()
 # set header for this app
 header = st.container()
 with header:
-	st.title('Recommendation for Chinese Restaturants in Philadelphia')
+	st.title('Recommendation for Chinese Restaurants in Philadelphia')
 	st.write('**You can choose the business name in the left side bar and gain some analysis based on that.**')
 
 tab1, tab3, tab4 = st.tabs(["Basic Information", "Sentiment Analysis", "Dishes Recommendation"])
@@ -128,8 +127,8 @@ group_data = review_data.groupby(['name','date_new'])
 #sns.lineplot(y = group_data[group_data['name']=='Spice 28']['sentiment_score'], x = group_data[group_data['name']=='Spice 28']['date_new'])
 #group_data[group_data['name']=='Spice 28']['sentiment_score']
 group = group_data.apply(lambda a: a[:])
-x = np.unique(group[group['name']=='Spice 28']['date_new'])
-y_group = group[group['name']=='Spice 28'][['date_new','sentiment_score']]
+x = np.unique(group[group['name']==business_select]['date_new'])
+y_group = group[group['name']==business_select][['date_new','sentiment_score']]
 y= np.array(y_group['sentiment_score'].groupby(group['date_new']).mean())
 hue = np.ones(len(y)) *avg_all_senti
 fig_2 = plt.figure(figsize=(5, 3))
@@ -248,18 +247,4 @@ with tab4:
 			col1.text(positive)
 		with col2:
 			col2.text(negative)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
