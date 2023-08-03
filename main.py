@@ -199,8 +199,8 @@ with tab3:
 		col1, col2 = st.columns(2)
 		with col1:
 			col1.pyplot(fig_1)
-		#with col2:
-		#	col2.pyplot(fig_2)
+		with col2:
+			col2.pyplot(fig_2)
 
 	
 	with st.container():
