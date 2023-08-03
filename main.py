@@ -116,9 +116,8 @@ y_food = food_score.values[0] if food_score.values.size !=0 else 0
 y_price = price_score.values[0] if price_score.values.size !=0 else 0
 y = [y_service, y_food, y_price]
 df = pd.DataFrame({"Category":X,"Sentiment Score":y})
-fig_1,ax = plt.figure(figsize=(5,3))
-sns.barplot(data=df, x="Category", y="Sentiment Score",ax=ax)
-ax.set_title('Sentiment Scores by Different Categories',fontsize = 16)
+fig_1 = plt.figure(figsize=(5,3))
+sns.barplot(data=df, x="Category", y="Sentiment Score")
 plt.tight_layout()
 
 review_data['date_new'] = pd.to_datetime(review_data["date"]).dt.strftime('%Y-%m')
