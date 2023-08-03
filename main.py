@@ -131,11 +131,11 @@ x = np.unique(group[group['name']==business_select]['date_new'])
 y_group = group[group['name']==business_select][['date_new','sentiment_score']]
 y= np.array(y_group['sentiment_score'].groupby(group['date_new']).mean())
 hue = np.ones(len(y)) *avg_all_senti
-#fig_2 = plt.figure(figsize=(5, 3))
+fig_2 = plt.figure(figsize=(5, 3))
 #ax = sns.lineplot(y = y, x= x)
 #ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=3))
-#plt.plot(x,hue)
-#plt.legend(title='Sentiment Scores', loc='lower left', labels=['Scores of this business', 'Average Scores of all business'],fontsize = 'x-small')
+plt.plot(x,hue)
+plt.legend(title='Sentiment Scores', loc='lower left', labels=['Scores of this business', 'Average Scores of all business'],fontsize = 'x-small')
 
 # generate tfidf
 from nltk.corpus import stopwords
@@ -187,8 +187,8 @@ with tab3:
 		with col1:
 			col1.markdown(tab2_title_1, unsafe_allow_html=True)
 			#col1.write("**Sentiment Scores by Different Categories**")
-		#with col2:
-		#	col2.markdown(tab2_title_2, unsafe_allow_html=True)
+		with col2:
+			col2.markdown(tab2_title_2, unsafe_allow_html=True)
 			#col2.write("**Sentiment Scores over Time v.s. Overall Scores**")
 
 	with st.container():
