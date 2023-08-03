@@ -134,7 +134,7 @@ hue = np.ones(len(y)) *avg_all_senti
 fig_2 = plt.figure(figsize=(5, 3))
 with pd.option_context('mode.use_inf_as_null', True):
 	ax = sns.lineplot(y = y, x= x)
-ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=3))
+#ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=3))
 #ax = sns.lineplot(y = y, x= x)
 #ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=3))
 plt.plot(x,hue)
