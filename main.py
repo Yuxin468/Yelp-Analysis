@@ -116,8 +116,10 @@ y_food = food_score.values[0] if food_score.values.size !=0 else 0
 y_price = price_score.values[0] if price_score.values.size !=0 else 0
 y = [y_service, y_food, y_price]
 df = pd.DataFrame({"Category":X,"Sentiment Score":y})
-fig_1 = plt.figure(figsize=(5,3))
-sns.barplot(data=df, x="Category", y="Sentiment Score")
+fig_1,ax = plt.figure(figsize=(5,3))
+sns.barplot(data=df, x="Category", y="Sentiment Score",ax=ax)
+ax.set_title('Sentiment Scores by Different Categories',fontsize = 16)
+plt.tight_layout()
 
 review_data['date_new'] = pd.to_datetime(review_data["date"]).dt.strftime('%Y-%m')
 avg_all_senti = review_data['sentiment_score'].mean()
@@ -130,7 +132,7 @@ x = np.unique(group[group['name']==business_select]['date_new'])
 y_group = group[group['name']==business_select][['date_new','sentiment_score']]
 y= np.array(y_group['sentiment_score'].groupby(group['date_new']).mean())
 hue = np.ones(len(y)) *avg_all_senti
-fig_2 = plt.figure(figsize=(5, 3))
+#fig_2 = plt.figure(figsize=(5, 3))
 #ax = sns.lineplot(y = y, x= x)
 #ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=3))
 #plt.plot(x,hue)
