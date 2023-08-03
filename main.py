@@ -131,13 +131,13 @@ x = np.unique(group[group['name']==business_select]['date_new'])
 y_group = group[group['name']==business_select][['date_new','sentiment_score']]
 y= np.array(y_group['sentiment_score'].groupby(group['date_new']).mean())
 hue = np.ones(len(y)) *avg_all_senti
-fig_2 = plt.figure(figsize=(6, 3))
+fig_2 = plt.figure(figsize=(6, 2))
 plt.gca().xaxis.set_major_locator(mdates.DayLocator(interval=8))
 plt.plot(x,y,color = '#173F5F')
 plt.axhline(hue[0])
 plt.gcf().autofmt_xdate()
 plt.axhline(hue[0])
-plt.legend(title='Sentiment Scores', loc='lower left', labels=['Scores of this business', 'Average Scores of all business'],fontsize = 'x-small')
+plt.legend(loc='lower left', labels=['Scores of this business', 'Average Scores of all business'],fontsize = 'x-small',markerscale = 0.7)
 
 # generate tfidf
 from nltk.corpus import stopwords
