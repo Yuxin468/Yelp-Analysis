@@ -179,7 +179,7 @@ positive = coeff_df.head(20).to_string(index = False)
 negative = coeff_df.tail(20).to_string(index = False)
 
 tab2_title_1 = '<p style="font-family:sans-serif; color:Black; font-size: 17px;">Sentiment Scores by Different Categories</p>'
-#tab2_title_2 = '<p style="font-family:sans-serif; color:Black; font-size: 17px;">Sentiment Scores over Time v.s. Overall Scores</p>'
+tab2_title_2 = '<p style="font-family:sans-serif; color:Black; font-size: 17px;">Sentiment Scores over Time v.s. Overall Scores</p>'
 
 with tab3:
 
