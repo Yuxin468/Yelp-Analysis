@@ -187,8 +187,8 @@ with tab3:
 		with col1:
 			col1.markdown(tab2_title_1, unsafe_allow_html=True)
 			#col1.write("**Sentiment Scores by Different Categories**")
-		with col2:
-			col2.markdown(tab2_title_2, unsafe_allow_html=True)
+		#with col2:
+		#	col2.markdown(tab2_title_2, unsafe_allow_html=True)
 			#col2.write("**Sentiment Scores over Time v.s. Overall Scores**")
 
 	with st.container():
@@ -199,8 +199,8 @@ with tab3:
 		col1, col2 = st.columns(2)
 		with col1:
 			col1.pyplot(fig_1)
-		with col2:
-			col2.pyplot(fig_2)
+		#with col2:
+		#	col2.pyplot(fig_2)
 
 	
 	with st.container():
