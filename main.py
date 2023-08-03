@@ -132,6 +132,9 @@ y_group = group[group['name']==business_select][['date_new','sentiment_score']]
 y= np.array(y_group['sentiment_score'].groupby(group['date_new']).mean())
 hue = np.ones(len(y)) *avg_all_senti
 fig_2 = plt.figure(figsize=(5, 3))
+with pd.option_context('mode.use_inf_as_null', True):
+	ax = sns.lineplot(y = y, x= x)
+        ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=3))
 #ax = sns.lineplot(y = y, x= x)
 #ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=3))
 plt.plot(x,hue)
