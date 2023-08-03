@@ -188,9 +188,9 @@ with tab3:
 		with col1:
 			col1.markdown(tab2_title_1, unsafe_allow_html=True)
 			#col1.write("**Sentiment Scores by Different Categories**")
-		#with col2:
-		#	col2.markdown(tab2_title_2, unsafe_allow_html=True)
-		#	#col2.write("**Sentiment Scores over Time v.s. Overall Scores**")
+		with col2:
+			col2.markdown(tab2_title_2, unsafe_allow_html=True)
+			#col2.write("**Sentiment Scores over Time v.s. Overall Scores**")
 
 	with st.container():
 		st.write("Empty means that this category doesn't contain any reviews.")
